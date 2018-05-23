@@ -3,7 +3,7 @@ package com.java.SpringWebApplication.DAO;
 import java.util.Date;
 
 import javax.persistence.Table;
-@Table
+@Table(name="CUSTOMERS")
 public class Customers {
 	private Date created;
 	private Date modified;
@@ -16,7 +16,6 @@ public class Customers {
 	private String password;
 	private String email;
 	private String phone;
-	private String fax;
 	private String billingAddressLine1;
 	private String billingAddressLine2;
 	private String billingCity;
@@ -110,14 +109,6 @@ public class Customers {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-
-	public String getFax() {
-		return fax;
-	}
-
-	public void setFax(String fax) {
-		this.fax = fax;
 	}
 
 	public String getBillingAddressLine1() {

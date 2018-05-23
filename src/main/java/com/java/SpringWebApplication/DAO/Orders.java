@@ -2,6 +2,8 @@ package com.java.SpringWebApplication.DAO;
 
 import java.util.Date;
 
+import javax.persistence.Table;
+@Table(name="ORDERS")
 public class Orders {
 	private Date created;
 	private Date modified;

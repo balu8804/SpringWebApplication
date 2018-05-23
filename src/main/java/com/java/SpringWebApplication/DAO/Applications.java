@@ -2,6 +2,8 @@ package com.java.SpringWebApplication.DAO;
 
 import java.util.Date;
 
+import javax.persistence.Table;
+@Table(name="APPLICATIONS")
 public class Applications {
 	private Date created;
 	private Date modified;
