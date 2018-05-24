@@ -15,11 +15,25 @@
 </plugin>
 </plugins>
   </build>
+  <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+</properties>
   <dependencies>
   <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
     <version>5.3.0.Final</version>
+</dependency>
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.2.2</version>
+</dependency>
+<dependency>
+    <groupId>postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>9.1-901-1.jdbc4</version>
 </dependency>
   
   
