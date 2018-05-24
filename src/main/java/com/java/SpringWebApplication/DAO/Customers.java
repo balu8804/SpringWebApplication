@@ -2,6 +2,8 @@ package com.java.SpringWebApplication.DAO;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
 import javax.persistence.Table;
 @Table(name="CUSTOMERS")
 public class Customers {
@@ -10,19 +12,20 @@ public class Customers {
 	private Long cust_id;
 	private String name;
 	private String state;
-	private String lastName;
-	private String firstName;
-	private String middleName;
+	private String last_Name;
+	private String first_Name;
+	private String middle_Name;
 	private String password;
 	private String email;
 	private String phone;
-	private String billingAddressLine1;
-	private String billingAddressLine2;
-	private String billingCity;
-	private String billingState;
-	private String billingPostalCode;
-	private String billingCountry;
-
+	private String billing_Address_Line1;
+	private String billing_Address_Line2;
+	private String billing_City;
+	private String billing_State;
+	private String billing_Postal_Code;
+	private String billing_Country;
+	
+     @Column(name="CREATED",nullable=false)
 	public Date getCreated() {
 		return created;
 	}
@@ -30,7 +33,7 @@ public class Customers {
 	public void setCreated(Date created) {
 		this.created = created;
 	}
-
+     @Column(name="MODIFIED", nullable=false)
 	public Date getModified() {
 		return modified;
 	}
@@ -38,7 +41,8 @@ public class Customers {
 	public void setModified(Date modified) {
 		this.modified = modified;
 	}
-
+     @Id
+     @Column(name="CUST_ID", unique=true,nullable=false)
 	public Long getCust_id() {
 		return cust_id;
 	}
@@ -46,7 +50,7 @@ public class Customers {
 	public void setCust_id(Long cust_id) {
 		this.cust_id = cust_id;
 	}
-
+   @Column(name="NAME")
 	public String getName() {
 		return name;
 	}
@@ -54,7 +58,7 @@ public class Customers {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+    @Column(name="STATE")
 	public String getState() {
 		return state;
 	}
@@ -62,31 +66,7 @@ public class Customers {
 	public void setState(String state) {
 		this.state = state;
 	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getMiddleName() {
-		return middleName;
-	}
-
-	public void setMiddleName(String middleName) {
-		this.middleName = middleName;
-	}
-
+    @Column(name="PASSWORD")
 	public String getPassword() {
 		return password;
 	}
@@ -94,7 +74,7 @@ public class Customers {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+   @Column(name="EMAIL")
 	public String getEmail() {
 		return email;
 	}
@@ -102,7 +82,7 @@ public class Customers {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
+@Column(name="PHONE")
 	public String getPhone() {
 		return phone;
 	}
@@ -110,53 +90,79 @@ public class Customers {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
-	public String getBillingAddressLine1() {
-		return billingAddressLine1;
+    @Column(name="LAST_NAME")
+	public String getLast_Name() {
+		return last_Name;
 	}
 
-	public void setBillingAddressLine1(String billingAddressLine1) {
-		this.billingAddressLine1 = billingAddressLine1;
+	public void setLast_Name(String last_Name) {
+		this.last_Name = last_Name;
+	}
+       @Column(name="FIRST_NAME")
+	public String getFirst_Name() {
+		return first_Name;
 	}
 
-	public String getBillingAddressLine2() {
-		return billingAddressLine2;
+	public void setFirst_Name(String first_Name) {
+		this.first_Name = first_Name;
+	}
+     @Column(name="MIDDLE_NAME")
+	public String getMiddle_Name() {
+		return middle_Name;
 	}
 
-	public void setBillingAddressLine2(String billingAddressLine2) {
-		this.billingAddressLine2 = billingAddressLine2;
+	public void setMiddle_Name(String middle_Name) {
+		this.middle_Name = middle_Name;
+	}
+     @Column(name="BILLING_ADDRESS_LINE1")
+	public String getBilling_Address_Line1() {
+		return billing_Address_Line1;
 	}
 
-	public String getBillingCity() {
-		return billingCity;
+	public void setBilling_Address_Line1(String billing_Address_Line1) {
+		this.billing_Address_Line1 = billing_Address_Line1;
+	}
+     @Column(name="BILLING_ADDRESS_LINE2")
+	public String getBilling_Address_Line2() {
+		return billing_Address_Line2;
 	}
 
-	public void setBillingCity(String billingCity) {
-		this.billingCity = billingCity;
+	public void setBilling_Address_Line2(String billing_Address_Line2) {
+		this.billing_Address_Line2 = billing_Address_Line2;
+	}
+     @Column(name="BILLING_CITY")
+	public String getBilling_City() {
+		return billing_City;
 	}
 
-	public String getBillingState() {
-		return billingState;
+	public void setBilling_City(String billing_City) {
+		this.billing_City = billing_City;
+	}
+     @Column(name="BILLING_STATE")
+	public String getBilling_State() {
+		return billing_State;
 	}
 
-	public void setBillingState(String billingState) {
-		this.billingState = billingState;
+	public void setBilling_State(String billing_State) {
+		this.billing_State = billing_State;
+	}
+    @Column(name="BILLING_POSTAL_CODE")
+	public String getBilling_Postal_Code() {
+		return billing_Postal_Code;
 	}
 
-	public String getBillingPostalCode() {
-		return billingPostalCode;
+	public void setBilling_Postal_Code(String billing_Postal_Code) {
+		this.billing_Postal_Code = billing_Postal_Code;
+	}
+    @Column(name="BILLING_COUNTRY")
+	public String getBilling_Country() {
+		return billing_Country;
 	}
 
-	public void setBillingPostalCode(String billingPostalCode) {
-		this.billingPostalCode = billingPostalCode;
+	public void setBilling_Country(String billing_Country) {
+		this.billing_Country = billing_Country;
 	}
 
-	public String getBillingCountry() {
-		return billingCountry;
-	}
-
-	public void setBillingCountry(String billingCountry) {
-		this.billingCountry = billingCountry;
-	}
+	
 
 }

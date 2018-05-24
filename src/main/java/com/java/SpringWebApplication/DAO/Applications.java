@@ -2,17 +2,23 @@ package com.java.SpringWebApplication.DAO;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
 import javax.persistence.Table;
-@Table(name="APPLICATIONS")
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Table(name = "APPLICATIONS")
 public class Applications {
 	private Date created;
 	private Date modified;
 	private String name;
 	private int app_id;
 	private Double price;
-	private String prop_ext_id;
 	private String currency;
 
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "CREATED", nullable = false)
 	public Date getCreated() {
 		return created;
 	}
@@ -21,6 +27,8 @@ public class Applications {
 		this.created = created;
 	}
 
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "MODIFIED", nullable = false)
 	public Date getModified() {
 		return modified;
 	}
@@ -29,6 +37,7 @@ public class Applications {
 		this.modified = modified;
 	}
 
+	@Column(name = "NAME", unique = true, nullable = false)
 	public String getName() {
 		return name;
 	}
@@ -37,6 +46,8 @@ public class Applications {
 		this.name = name;
 	}
 
+	@Id
+	@Column(name = "APP_ID", unique = true, nullable = false)
 	public int getApp_id() {
 		return app_id;
 	}
@@ -45,6 +56,7 @@ public class Applications {
 		this.app_id = app_id;
 	}
 
+	@Column(name = "price", nullable = false)
 	public Double getPrice() {
 		return price;
 	}
@@ -53,14 +65,7 @@ public class Applications {
 		this.price = price;
 	}
 
-	public String getProp_ext_id() {
-		return prop_ext_id;
-	}
-
-	public void setProp_ext_id(String prop_ext_id) {
-		this.prop_ext_id = prop_ext_id;
-	}
-
+	@Column(name = "CURRENCY", nullable = false)
 	public String getCurrency() {
 		return currency;
 	}
