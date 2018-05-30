@@ -1,6 +1,5 @@
-<!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
 	<session-factory>
@@ -8,21 +7,25 @@
 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
 		<property name="hibernate.connection.username">postgres</property>
 		<property name="hibernate.connection.password">password</property>
-		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/hibernatedb</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/comp</property>
 		<property name="connection_pool_size">1</property>
-		<property name="hbm2ddl.auto">create</property>
+<!--  		<property name="hbm2ddl.auto">create</property> -->
+         <property name="hbm2ddl.auto">update</property>
+		
 		<property name="show_sql">true</property>
+		<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+		
 
 
 
-		<mapping class="com.java.SpringWebApplication.DAO.Applications" />
+<!-- 		<mapping class="com.java.SpringWebApplication.DAO.Applications" /> -->
 		<mapping class="com.java.SpringWebApplication.DAO.Customers" />
-		<mapping class="com.java.SpringWebApplication.DAO.Orders" />
+<!-- 		<mapping class="com.java.SpringWebApplication.DAO.Orders" /> -->
 
 
-		<mapping resource="com/java/SpringWebApplication/DAO/Orders.hbm.xml" />
-		<mapping resource="com/java/SpringWebApplication/DAO/Customers.hbm.xml" />
-		<mapping resource="com/java/SpringWebApplication/DAO/Applications.hbm.xml" />
+<!-- 		<mapping resource="com/java/SpringWebApplication/DAO/Orders.hbm.xml" /> -->
+<!-- 		<mapping resource="com/java/SpringWebApplication/DAO/Customers.hbm.xml" /> -->
+<!-- 		<mapping resource="com/java/SpringWebApplication/DAO/Applications.hbm.xml" /> -->
 
 	</session-factory>
 </hibernate-configuration>

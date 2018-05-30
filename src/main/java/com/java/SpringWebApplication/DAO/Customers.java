@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,7 +14,7 @@ import javax.persistence.Table;
 public class Customers {
 	private Date created;
 	private Date modified;
-	private Long cust_id;
+	private int cust_id;
 	private String name;
 	private String state;
 	private String last_Name;
@@ -47,12 +49,13 @@ public class Customers {
 	}
 
 	@Id
-	@Column(name = "CUST_ID", unique = true, nullable = false)
-	public Long getCust_id() {
+	@Column(name = "CUST_ID", unique =true, nullable =false)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	public int getCust_id() {
 		return cust_id;
 	}
 
-	public void setCust_id(Long cust_id) {
+	public void setCust_id(int cust_id) {
 		this.cust_id = cust_id;
 	}
 
