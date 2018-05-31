@@ -30,7 +30,7 @@ public class Customers {
 	private int billing_Postal_Code;
 	private String billing_Country;
 
-	@Column(name = "CREATED")
+	@Column(name = "CREATED",nullable=false)
 	public Date getCreated() {
 		return created;
 	}
@@ -39,7 +39,7 @@ public class Customers {
 		this.created = created;
 	}
 
-	@Column(name = "MODIFIED")
+	@Column(name = "MODIFIED",nullable=false)
 	public Date getModified() {
 		return modified;
 	}

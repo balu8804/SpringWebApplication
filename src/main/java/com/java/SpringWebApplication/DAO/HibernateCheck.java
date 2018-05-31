@@ -1,11 +1,6 @@
 package com.java.SpringWebApplication.DAO;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
@@ -20,7 +15,7 @@ public class HibernateCheck {
 		Transaction transaction=session.beginTransaction();
 
 		Customers customers=new Customers();
-		customers.setCust_id(1);
+		//customers.setCust_id(1);
 		customers.setCreated(date);
 		customers.setModified(date);
 		customers.setName("Balasubramanyam Lanka");
