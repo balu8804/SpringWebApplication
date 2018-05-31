@@ -22,15 +22,15 @@ public class Customers {
 	private String middle_Name;
 	private String password;
 	private String email;
-	private String phone;
+	private int phone;
 	private String billing_Address_Line1;
 	private String billing_Address_Line2;
 	private String billing_City;
 	private String billing_State;
-	private String billing_Postal_Code;
+	private int billing_Postal_Code;
 	private String billing_Country;
 
-	@Column(name = "CREATED", nullable = false)
+	@Column(name = "CREATED")
 	public Date getCreated() {
 		return created;
 	}
@@ -39,7 +39,7 @@ public class Customers {
 		this.created = created;
 	}
 
-	@Column(name = "MODIFIED", nullable = false)
+	@Column(name = "MODIFIED")
 	public Date getModified() {
 		return modified;
 	}
@@ -50,7 +50,7 @@ public class Customers {
 
 	@Id
 	@Column(name = "CUST_ID", unique =true, nullable =false)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getCust_id() {
 		return cust_id;
 	}
@@ -96,11 +96,11 @@ public class Customers {
 	}
 
 	@Column(name = "PHONE")
-	public String getPhone() {
+	public int getPhone() {
 		return phone;
 	}
 
-	public void setPhone(String phone) {
+	public void setPhone(int phone) {
 		this.phone = phone;
 	}
 
@@ -168,11 +168,11 @@ public class Customers {
 	}
 
 	@Column(name = "BILLING_POSTAL_CODE")
-	public String getBilling_Postal_Code() {
+	public int getBilling_Postal_Code() {
 		return billing_Postal_Code;
 	}
 
-	public void setBilling_Postal_Code(String billing_Postal_Code) {
+	public void setBilling_Postal_Code(int billing_Postal_Code) {
 		this.billing_Postal_Code = billing_Postal_Code;
 	}
 
