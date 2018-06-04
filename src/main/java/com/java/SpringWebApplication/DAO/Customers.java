@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.ComponentScan;
+@ComponentScan(basePackages="com.java.SpringWebApplication")
 @Entity
 @Table(name = "CUSTOMERS")
 public class Customers {
