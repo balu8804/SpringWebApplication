@@ -14,17 +14,12 @@
 		<property name="show_sql">true</property>
 		<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
 
-		<mapping class="com.java.SpringWebApplication.DAO.Applications" />
+<!-- 		<mapping class="com.java.SpringWebApplication.DAO.Applications" /> -->
 		<mapping class="com.java.SpringWebApplication.DAO.Customers" />
-		<mapping class="com.java.SpringWebApplication.DAO.Orders" />
+<!-- 		<mapping class="com.java.SpringWebApplication.DAO.Orders" /> -->
 
 
-		<!-- <mapping resource="com/java/SpringWebApplication/DAO/Orders.hbm.xml" 
-			/> -->
-		<!-- <mapping resource="com/java/SpringWebApplication/DAO/Customers.hbm.xml" 
-			/> -->
-		<!-- <mapping resource="com/java/SpringWebApplication/DAO/Applications.hbm.xml" 
-			/> -->
+		
 
 	</session-factory>
 </hibernate-configuration>

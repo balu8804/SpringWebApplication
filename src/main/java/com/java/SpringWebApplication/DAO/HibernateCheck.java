@@ -4,8 +4,17 @@ import java.util.Date;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.java.SpringWebApplication.Service.CustomerServiceImpl;
+
+import jdk.internal.jline.internal.Log;
 
 public class HibernateCheck {
+	
+	Logger logger = LoggerFactory.getLogger(HibernateCheck.class);
+
 	public static Session session;
 
 	public static void main(String[] args) {
@@ -32,8 +41,8 @@ public class HibernateCheck {
 		session.save(customers);
 		transaction.commit();
 		session.close();
-		
-		System.out.println("user saved successfully");
+		Log.info("user saved successfully");
+		//System.out.println("user saved successfully");
 
 	}
 

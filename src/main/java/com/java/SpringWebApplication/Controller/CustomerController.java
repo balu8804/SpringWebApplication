@@ -24,7 +24,7 @@ import com.java.SpringWebApplication.DAO.Customers;
 
 
 
-@ComponentScan(basePackages="com.java.WebSpringApplication")
+@ComponentScan(basePackages="com.java.SpringWebApplication")
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
