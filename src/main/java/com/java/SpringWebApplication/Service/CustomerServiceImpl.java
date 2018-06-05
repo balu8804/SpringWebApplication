@@ -15,7 +15,18 @@ public class CustomerServiceImpl implements CustomerService {
 
 	public Customers createCustomer(Customers customer) {
 		try {
-			customer.setCust_id(customer.getCust_id());
+			customer.setCust_id(customers.getCust_id());
+			customer.setCreated(customers.getCreated());
+			customer.setModified(customers.getModified());
+			customer.setName(customers.getName());
+			customers.setFirst_Name(customers.getFirst_Name());
+			customers.setLast_Name(customers.getLast_Name());
+			customers.setState(customers.getState());
+			customers.setEmail(customers.getEmail());
+			customers.setBilling_Address_Line1(customers.getBilling_Address_Line1());
+			customers.setBilling_City(customers.getBilling_City());
+			customers.setBilling_State(customers.getBilling_State());
+			customers.setBilling_Country(customers.getBilling_Country());
 
 		} catch (NullPointerException ex) {
 
