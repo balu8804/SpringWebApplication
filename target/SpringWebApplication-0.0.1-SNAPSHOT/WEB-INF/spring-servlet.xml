@@ -10,7 +10,13 @@
    <context:component-scan base-package ="com.java.SpringWebApplication" />
    <bean name="customerServiceImpl" class="com.java.SpringWebApplication.Service.CustomerServiceImpl"></bean>
    <bean name="customers" class="com.java.SpringWebApplication.DAO.Customers"></bean>
-     <bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+<!--      <bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/> -->
+   <bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/webapp/." />
+		<property name="suffix" value="index.html" />
+	</bean>
+
    
 
    

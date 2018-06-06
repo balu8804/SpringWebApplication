@@ -7,13 +7,10 @@ import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.java.SpringWebApplication.Service.CustomerServiceImpl;
-
-import jdk.internal.jline.internal.Log;
 
 public class HibernateCheck {
 	
-	Logger logger = LoggerFactory.getLogger(HibernateCheck.class);
+	static Logger logger = LoggerFactory.getLogger(HibernateCheck.class);
 
 	public static Session session;
 
@@ -41,7 +38,7 @@ public class HibernateCheck {
 		session.save(customers);
 		transaction.commit();
 		session.close();
-		Log.info("user saved successfully");
+		logger.info("user saved successfully");
 		//System.out.println("user saved successfully");
 
 	}
