@@ -1,9 +1,7 @@
 package com.java.SpringWebApplication.Controller;
 
 import org.apache.log4j.Logger;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +15,7 @@ public class SampleController {
 
 	
 	@RequestMapping(value="/name",method = RequestMethod.GET)
-	public String showMyName(Model model, @RequestParam("id") String id)
+	public String showMyName(@RequestParam(value="id") String id)
 	{
 		System.out.println("This is sample controller class");
 		System.out.println("Id is: "+id);

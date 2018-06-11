@@ -3,5 +3,6 @@ com/java/SpringWebApplication/DAO/Customers.class
 com/java/SpringWebApplication/Service/CustomerService.class
 com/java/SpringWebApplication/Controller/SampleController.class
 com/java/SpringWebApplication/Service/CustomerServiceImpl.class
+com/java/SpringWebApplication/Service/AddCustomerRequest.class
 com/java/SpringWebApplication/Controller/CustomerController.class
 com/java/SpringWebApplication/DAO/CustomerState.class
