@@ -17,8 +17,7 @@ public class SampleController {
 	@RequestMapping(value="/name",method = RequestMethod.GET)
 	public String showMyName(@RequestParam(value="id") String id)
 	{
-		System.out.println("This is sample controller class");
-		System.out.println("Id is: "+id);
+		logger.info("This is sample controller class");
 		logger.info("Id is: "+id);
 		return "balu";
 	}

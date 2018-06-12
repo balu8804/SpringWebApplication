@@ -7,6 +7,7 @@ import com.java.SpringWebApplication.DAO.Customers;
 public interface CustomerService {
 	Customers createCustomer(Customers customer);
 	Customers getCustomer(int cust_id);
+	public void addCustomer(Customers customer);
 	Customers updateCustomer(Customers customer);
 	void deleteCustomer(int cust_id);
 	

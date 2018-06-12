@@ -1,5 +1,10 @@
 package com.java.SpringWebApplication.Service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,26 +18,27 @@ public class CustomerServiceImpl implements CustomerService {
 	@Autowired
 	Customers customers;
 
-	public Customers createCustomer(Customers customer) {
-		try {
-			customer.setCust_id(customers.getCust_id());
-			customer.setCreated(customers.getCreated());
-			customer.setModified(customers.getModified());
-			customer.setName(customers.getName());
-			customers.setFirst_Name(customers.getFirst_Name());
-			customers.setLast_Name(customers.getLast_Name());
-			customers.setState(customers.getState());
-			customers.setEmail(customers.getEmail());
-			customers.setBilling_Address_Line1(customers.getBilling_Address_Line1());
-			customers.setBilling_City(customers.getBilling_City());
-			customers.setBilling_State(customers.getBilling_State());
-			customers.setBilling_Country(customers.getBilling_Country());
+	public Customers createCustomer(Customers cust) {
+		
+			  Set<Customers> customer=new HashSet<Customers>();
+			  customers.setCust_id(cust.getCust_id());
+			  customers.setCreated(cust.getCreated());
+			  customers.setModified(cust.getModified());
+			  customers.setName(cust.getName());
+			  customers.setFirst_Name(cust.getFirst_Name());
+			  customers.setLast_Name(cust.getLast_Name());
+			  customers.setState(cust.getState());
+			  customers.setEmail(cust.getEmail());
+			  customers.setBilling_Address_Line1(cust.getBilling_Address_Line1());
+			  customers.setBilling_City(cust.getBilling_City());
+			  customers.setBilling_State(cust.getBilling_State());
+			  customers.setBilling_Country(cust.getBilling_Country());
+			  customer.add(customers);
+			  
+              return  customers;
 
-		} catch (NullPointerException ex) {
 
-		}
-
-		return null;
+		
 	}
 
 	public Customers getCustomer(int cust_id) {
@@ -45,6 +51,13 @@ public class CustomerServiceImpl implements CustomerService {
 
 	public void deleteCustomer(int cust_id) {
 
+	}
+
+	@Override
+	public void addCustomer(Customers customer) {
+		
+		 final List<Customers> customers=new ArrayList<Customers>();
+			customers.add(customer);
 	}
 
 }
