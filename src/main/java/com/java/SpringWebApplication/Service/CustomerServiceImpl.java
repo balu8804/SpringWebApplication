@@ -18,21 +18,19 @@ public class CustomerServiceImpl implements CustomerService {
 	@Autowired
 	Customers customers;
 
-	public Customers createCustomer(Customers cust) {
+	public Customers createCustomer(AddCustomerRequest cust_req) {
 		
 			  Set<Customers> customer=new HashSet<Customers>();
-			  customers.setCust_id(cust.getCust_id());
-			  customers.setCreated(cust.getCreated());
-			  customers.setModified(cust.getModified());
-			  customers.setName(cust.getName());
-			  customers.setFirst_Name(cust.getFirst_Name());
-			  customers.setLast_Name(cust.getLast_Name());
-			  customers.setState(cust.getState());
-			  customers.setEmail(cust.getEmail());
-			  customers.setBilling_Address_Line1(cust.getBilling_Address_Line1());
-			  customers.setBilling_City(cust.getBilling_City());
-			  customers.setBilling_State(cust.getBilling_State());
-			  customers.setBilling_Country(cust.getBilling_Country());
+			  customers.setCust_id(cust_req.getCust_id());
+			  customers.setName(cust_req.getName());
+			  customers.setFirst_Name(cust_req.getFirst_Name());
+			  customers.setLast_Name(cust_req.getLast_Name());
+			  customers.setState(cust_req.getState());
+			  customers.setEmail(cust_req.getEmail());
+			  customers.setBilling_Address_Line1(cust_req.getBilling_Address_Line1());
+			  customers.setBilling_City(cust_req.getBilling_City());
+			  customers.setBilling_State(cust_req.getBilling_State());
+			  customers.setBilling_Country(cust_req.getBilling_Country());
 			  customer.add(customers);
 			  
               return  customers;
