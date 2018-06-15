@@ -9,18 +9,18 @@ import org.apache.log4j.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.java.SpringWebApplication.Service.AddCustomerRequest;
 import com.java.SpringWebApplication.Service.CustomerServiceImpl;
 import com.java.SpringWebApplication.Controller.CustomerController;
 
 @ComponentScan(basePackages = "com.java.SpringWebApplication")
-@Controller
+@RestController
 @RequestMapping("/customer")
 public class CustomerController {
 	public static Session session;
