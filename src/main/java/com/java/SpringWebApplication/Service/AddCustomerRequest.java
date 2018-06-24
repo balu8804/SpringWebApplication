@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class AddCustomerRequest {
 
-	@JsonProperty("cust-id")
+	@JsonProperty("cust_id")
 	@XmlElement(name = "cust-id")
 	private int cust_id;
 

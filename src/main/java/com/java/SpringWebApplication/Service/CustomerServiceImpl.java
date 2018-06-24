@@ -5,19 +5,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.ws.rs.core.MediaType;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
 import javax.xml.bind.Marshaller;
 
 
@@ -29,13 +20,10 @@ public class CustomerServiceImpl implements CustomerService {
 	Marshaller marshal;
 	@Autowired
 	Customers customers;
-		
-	//@RequestMapping(value="/createcustomer", method = RequestMethod.POST, produces={MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML},
-			//consumes={MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-	@PostMapping(path="/createcustomer", consumes="application/json")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Customers createCustomer(@RequestBody AddCustomerRequest cust_req) {
-		
+	
+	public Customers createCustomer(AddCustomerRequest cust_req) {
+		  System.out.println("This is customerservice"+cust_req.getCust_id()+cust_req.getName());
+
 			  Set<Customers> customer=new HashSet<Customers>();
 			  customers.setCust_id(cust_req.getCust_id());
 			  customers.setName(cust_req.getName());
