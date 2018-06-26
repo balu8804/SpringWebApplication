@@ -1,13 +1,25 @@
 package com.java.SpringWebApplication.Service;
 
+import java.util.Date;
+
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+@XmlRootElement(name="AddCustomerRequest")
 public class AddCustomerRequest {
+	
+	@JsonProperty("created")
+	@XmlElement(name = "created")
+	private Date created;
+	
+	@JsonProperty("modified")
+	@XmlElement(name = "modified")
+	private Date modified;
+	
 
 	@JsonProperty("cust_id")
-	@XmlElement(name = "cust-id")
+	@XmlElement(name = "cust_id")
 	private int cust_id;
 
 	@JsonProperty("name")
@@ -47,6 +59,7 @@ public class AddCustomerRequest {
 	@JsonProperty("billing-State")
 	@XmlElement(name = "billing-State")
 	private String billing_State;
+	
 	@JsonProperty("billing-Postal-Code")
 	@XmlElement(name = "billing-Postal-Code")
 
@@ -54,7 +67,23 @@ public class AddCustomerRequest {
 	@JsonProperty("billing-Country")
 	@XmlElement(name = "billing-Country")
 	private String billing_Country;
+   
+	public Date getCreated() {
+		return created;
+	}
 
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public Date getModified() {
+		return modified;
+	}
+
+	public void setModified(Date modified) {
+		this.modified = modified;
+	}
+	
 	public int getCust_id() {
 		return cust_id;
 	}

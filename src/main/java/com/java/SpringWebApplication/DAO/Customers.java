@@ -32,7 +32,7 @@ public class Customers {
 	private int billing_Postal_Code;
 	private String billing_Country;
 
-	@Column(name = "CREATED",nullable=false)
+	@Column(name = "CREATED",nullable=true)
 	public Date getCreated() {
 		return created;
 	}
@@ -41,7 +41,7 @@ public class Customers {
 		this.created = created;
 	}
 
-	@Column(name = "MODIFIED",nullable=false)
+	@Column(name = "MODIFIED",nullable=true)
 	public Date getModified() {
 		return modified;
 	}

@@ -9,13 +9,12 @@ import org.apache.log4j.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.java.SpringWebApplication.Service.AddCustomerRequest;
 import com.java.SpringWebApplication.Service.CustomerServiceImpl;
 import com.java.SpringWebApplication.Controller.CustomerController;
@@ -30,20 +29,24 @@ public class CustomerController {
 	private static final Logger logger = Logger.getLogger(CustomerController.class);
 	@Autowired
 	CustomerServiceImpl customerServiceImpl;
-	@Autowired
-	AddCustomerRequest cust_req;
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON,
 			MediaType.APPLICATION_XML }, consumes = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	@ResponseStatus(HttpStatus.CREATED)
-	public Response createCustomer(AddCustomerRequest addCustomerRequest, @Context HttpServletRequest servletRequest) {
-		logger.info("entered values are"+addCustomerRequest.getCust_id());
-		System.out.println("Customer" + addCustomerRequest.getCust_id() + addCustomerRequest.getName());
+	public Response createCustomer(@RequestBody AddCustomerRequest addCustomerRequest,
+			@Context HttpServletRequest servletRequest) {
 		logger.info("controller class");
+         
+		logger.info("From control class entered values are: " + addCustomerRequest.getCust_id() + addCustomerRequest.getName()
+				+ addCustomerRequest.getFirst_Name() + addCustomerRequest.getState() + addCustomerRequest.getLast_Name()
+				+ addCustomerRequest.getFirst_Name() + addCustomerRequest.getEmail() + addCustomerRequest.getPhone()
+				+ addCustomerRequest.getBilling_Address_Line1() + addCustomerRequest.getBilling_City()
+				+ addCustomerRequest.getBilling_State() + addCustomerRequest.getBilling_Postal_Code()
+				+ addCustomerRequest.getBilling_Country());
 		customerServiceImpl.createCustomer(addCustomerRequest);
 
-		logger.info("This is the customer Controller class");
-		// response=Response.status(Status.OK).entity(arg0);
+		logger.info("user saved successfully");
+
+		// response=Response.status(Status.OK).entity(data);
 		return response;
 	}
 
